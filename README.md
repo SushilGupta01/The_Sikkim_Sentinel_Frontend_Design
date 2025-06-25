@@ -38,3 +38,8 @@ THE-SIKKIM-SENTINEL/
 │   ├── index.css
 │   └── main.jsx
 
+Steps to run : 
+1. npm install
+2. npm install framer-motion
+3. npm install react-icons
+4. npm run dev
