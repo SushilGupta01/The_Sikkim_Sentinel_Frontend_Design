@@ -16,7 +16,7 @@ Technologies Used
 - CSS Modules
 - Google Fonts (Inter Sans Serif)
 
-Inspired by Freepik and modern UI principles.
+Inspired by Freepik and modern UI principles. ```
 ```
 THE-SIKKIM-SENTINEL/
 │

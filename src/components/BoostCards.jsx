@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { motion } from "framer-motion";
 import styles from "./BoostCards.module.css";
 
-const BoostCards = () => {
+const BoostCards = forwardRef((props, ref) => {
   const container = {
     hidden: {},
     show: {
@@ -13,32 +13,31 @@ const BoostCards = () => {
       }
     }
   };
-const cards = [
-  {
-    title: "Emergency Contacts",
-    description: "Reach out quickly with one-tap emergency helplines.",
-    img: "/assets/alert.svg"
-  },
-  {
-    title: "Emergency Contacts",
-    description: "Reach out quickly with one-tap emergency helplines.",
-    img: "/assets/tips.svg"
-  },
-  {
-    title: "Emergency Contacts",
-    description: "Reach out quickly with one-tap emergency helplines.",
-    img: "/assets/emergency.svg"
-  },
-  {
-    title: "Emergency Contacts",
-    description: "Reach out quickly with one-tap emergency helplines.",
-    img: "/assets/updates.svg"
-  }
-];
 
+  const cards = [
+    {
+      title: "Real-Time Alerts",
+      description: "Get notified instantly about natural disasters near you.",
+      img: "/assets/alert.svg"
+    },
+    {
+      title: "Verified Tips",
+      description: "Access safety protocols from certified sources.",
+      img: "/assets/tips.svg"
+    },
+    {
+      title: "Emergency Contacts",
+      description: "Reach out quickly with one-tap emergency helplines.",
+      img: "/assets/emergency.svg"
+    },
+    {
+      title: "Local Updates",
+      description: "Stay updated with community-specific news.",
+      img: "/assets/updates.svg"
+    }
+  ];
 
-
- const cardVariant = {
+  const cardVariant = {
     hidden: { opacity: 0, y: 60 },
     show: {
       opacity: 1,
@@ -50,16 +49,25 @@ const cards = [
       }
     }
   };
+
   return (
     <motion.section
+      ref={ref}
       className={styles.boostSection}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={container}
     >
-      <motion.h2 className={styles.heading}>
-        <span className={styles.gradientText}>Empowering</span> Safety Experiences
+      <motion.h2
+        className={styles.heading}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <span className={styles.gradientText}>Empowering</span>{" "}
+        <span className={styles.gradientTextAlt}>Safety Experiences</span>
       </motion.h2>
 
       <div className={styles.grid}>
@@ -70,24 +78,17 @@ const cards = [
             variants={cardVariant}
             whileHover={{
               scale: 1.05,
-              rotateZ: 1,
               boxShadow: "0 0 40px rgba(249, 248, 113, 0.3)"
             }}
           >
             <img src={card.img} alt={card.title} className={styles.cardImg} />
             <h3>{card.title}</h3>
             <p>{card.description}</p>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className={styles.button}
-            >
-              See More →
-            </motion.button>
           </motion.div>
         ))}
       </div>
     </motion.section>
   );
-};
- export default BoostCards;
+});
+
+export default BoostCards;

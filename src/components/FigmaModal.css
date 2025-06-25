@@ -85,12 +85,12 @@
 }
 
 .preview-button.secondary {
-  background: linear-gradient(135deg, #fabd60, #fff5cc);
+  background: linear-gradient(135deg, #f9f871, #fff);
   box-shadow: 0 0 20px #fabd6088;
 }
 
 .preview-button.secondary:hover {
-  box-shadow: 0 0 30px #fabd60aa;
+  box-shadow: 0 0 30px  #f9f871aa;
 }
 
 @media (max-width: 500px) {

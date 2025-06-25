@@ -1,22 +1,33 @@
 .boostSection {
   background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
-  padding: 100px 5vw;
+  padding: 100px 5vw 40px;
   text-align: center;
 }
 
 .heading {
   font-size: 48px;
-  color: white;
+  color:  #f4c430;
   margin-bottom: 60px;
   font-weight: 800;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .gradientText {
-  background: linear-gradient(90deg, #f9f871, #ffffff);
+  background: linear-gradient(90deg, #ff914d, #ffde59);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.card h3::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0%;
+  background: #f4c430;
+  transition: width 0.5s ease;
+}
+.card:hover h3::after {
+  width: 100%;
 }
 
 .grid {
