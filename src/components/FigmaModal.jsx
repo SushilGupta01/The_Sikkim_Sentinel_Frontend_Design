@@ -59,19 +59,19 @@ const FigmaModal = () => {
 
       {/* Modal for Hardware Prototype */}
       {isHardwareOpen && (
-        <div className="modal-overlay" onClick={() => setHardwareOpen(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="hardware-fullscreen" onClick={() => setHardwareOpen(false)}>
+          <div className="hardware-video-wrapper" onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={() => setHardwareOpen(false)}>✖</button>
             <iframe
               title="Hardware Prototype"
-              src="https://drive.google.com/file/d/YOUR_VIDEO_ID/preview"
-              className="figma-frame"
+              src="https://drive.google.com/file/d/1O_uYhaXoamZmS9SmyYAGBNLq-XsWTWu9/preview"
+              className="hardware-video-frame"
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
           </div>
         </div>
-      )} 
+      )}
     </section>
   );
 };
