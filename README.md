@@ -5,8 +5,8 @@ Custom Color Palette : Black, White, and Golden tones
 
 Screenshots
 
-![Hero Section](./assets/screens/hero.png)
-![Cards Section](./assets/screens/cards.png)
+![Hero Section](./public/assets/screens/hero.png)
+![Cards Section](./public/assets/screens/cards.png)
 
 Technologies Used
 
