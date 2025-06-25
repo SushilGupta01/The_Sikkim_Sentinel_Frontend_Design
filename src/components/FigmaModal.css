@@ -1,7 +1,20 @@
 .preview-section {
-  background: #000;
+  background-image: url("/assets/next.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
   text-align: center;
   padding: 80px 20px 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.preview-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: -1;
 }
 
 .preview-heading {
