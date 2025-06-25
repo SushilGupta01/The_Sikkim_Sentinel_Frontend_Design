@@ -12,3 +12,12 @@ html {
   width: 100%;
   overflow-x: hidden;
 }
+.footer-min {
+  padding: 12px 0;
+  font-size: 13px;
+  color: #aaa;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  line-height: 1;
+  margin-top: auto;
+}

@@ -64,13 +64,14 @@ const FigmaModal = () => {
             <button className="close-button" onClick={() => setHardwareOpen(false)}>✖</button>
             <iframe
               title="Hardware Prototype"
-              src=""
+              src="https://drive.google.com/file/d/YOUR_VIDEO_ID/preview"
               className="figma-frame"
+              allow="autoplay; encrypted-media"
               allowFullScreen
             />
           </div>
         </div>
-      )}
+      )} 
     </section>
   );
 };

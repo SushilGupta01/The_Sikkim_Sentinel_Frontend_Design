@@ -22,6 +22,7 @@ function App() {
       <HeroSection />
       <BoostCards ref={boostRef} />
       <FigmaModal />
+      <footer className="footer-min">Copyright © ShapeIT 2025</footer>
     </div>
   );
 }
