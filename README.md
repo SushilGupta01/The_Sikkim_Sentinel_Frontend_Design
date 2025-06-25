@@ -17,7 +17,7 @@ Technologies Used
 - Google Fonts (Inter Sans Serif)
 
 Inspired by Freepik and modern UI principles.
-
+```
 THE-SIKKIM-SENTINEL/
 │
 ├── public/
@@ -37,7 +37,7 @@ THE-SIKKIM-SENTINEL/
 │   ├── App.jsx
 │   ├── index.css
 │   └── main.jsx
-
+```
 Steps to run : 
 1. npm install
 2. npm install framer-motion
