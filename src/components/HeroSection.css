@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
 
-
 .hero {
   position: relative;
   height: 100vh;
@@ -10,15 +9,15 @@
   background-position: center;
   background-repeat: no-repeat;
   background-color: #000;
-  /* fallback if image fails */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-family: 'Outfit', sans-serif;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 0 16px; /* uniform horizontal padding */
   color: #fff;
+  box-sizing: border-box;
 }
 
 .hero-content {
@@ -28,32 +27,24 @@
 }
 
 .hero-title {
-  font-size: 92px;
+  font-size: 90px;
   font-weight: 700;
   color: #fffef5;
   margin-bottom: 0.5em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   white-space: nowrap;
   overflow: hidden;
-  border-right: 4px solid #fabd60;
-  width: 0;
-  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
+.cursor {
+  display: inline-block;
+  color: #fabd60;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero-subtitle {
@@ -98,7 +89,6 @@
     transform: translateY(20px);
     filter: blur(4px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -106,17 +96,80 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Tablet & Small Laptops */
+@media (max-width: 1024px) {
   .hero-title {
-    font-size: 40px;
+    font-size: 64px;
   }
 
   .hero-subtitle {
+    font-size: 28px;
+  }
+
+  .hero-tagline {
     font-size: 22px;
+  }
+
+  .glass-tagline {
+    padding: 20px 28px;
+  }
+}
+
+/* Tablets & Large Phones */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 14px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
   }
 
   .hero-tagline {
     font-size: 18px;
+  }
+
+  .glass-tagline {
+    padding: 16px 20px;
+    border-radius: 16px;
+  }
+
+  .hero-content {
+    padding: 20px 0;
+  }
+}
+
+/* Smaller Phones */
+@media (max-width: 480px) {
+  .hero {
+    padding: 0 12px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+    white-space: normal;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+  }
+
+  .glass-tagline {
+    padding: 14px 16px;
+    border-radius: 14px;
+  }
+
+  .hero-content {
+    padding: 16px 0;
   }
 }

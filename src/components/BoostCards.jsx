@@ -17,7 +17,7 @@ const BoostCards = forwardRef((props, ref) => {
   const cards = [
     {
       title: "Real-Time Alerts",
-      description: "Get notified instantly about natural disasters near you.",
+      description: "Get notified instantly about natural disasters near you.      ",
       img: "/assets/alert.svg"
     },
     {
@@ -32,7 +32,7 @@ const BoostCards = forwardRef((props, ref) => {
     },
     {
       title: "Local Updates",
-      description: "Stay updated with community-specific news.",
+      description: "Stay updated with community-specific news.           ",
       img: "/assets/updates.svg"
     }
   ];
@@ -66,8 +66,8 @@ const BoostCards = forwardRef((props, ref) => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <span className={styles.gradientText}>Empowering</span>{" "}
-        <span className={styles.gradientTextAlt}>Safety Experiences</span>
+        <span className={styles.gradientText}>Empowering Safety Experiences.</span>{" "}
+      
       </motion.h2>
 
       <div className={styles.grid}>

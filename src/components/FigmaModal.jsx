@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./FigmaModal.css";
 
 const FigmaModal = () => {
   const [isAppOpen, setAppOpen] = useState(false);
   const [isHardwareOpen, setHardwareOpen] = useState(false);
+
+  useEffect(() => {
+    if (isAppOpen || isHardwareOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isAppOpen, isHardwareOpen]);
 
   return (
     <section className="preview-section">
@@ -31,14 +43,14 @@ const FigmaModal = () => {
         </motion.button>
 
         <motion.button
-          className="preview-button secondary"
+          className="preview-button"
           onClick={() => setHardwareOpen(true)}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          View Hardware Prototype
+          Preview Hardware
         </motion.button>
       </div>
 

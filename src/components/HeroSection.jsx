@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./HeroSection.css";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const fullTitle = "  The Sikkim Sentinel";
+  const [typedText, setTypedText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullTitle.length) {
+        setTypedText((prev) => prev + fullTitle.charAt(index));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1 className="hero-title typewriter">The Sikkim Sentinel</h1>
+        <h1 className="hero-title">
+          {typedText}
+          <span className="cursor">|</span>
+        </h1>
 
         <motion.p
           className="hero-subtitle"
@@ -17,6 +36,7 @@ const HeroSection = () => {
         >
           Your Safety, Our Priority
         </motion.p>
+
         <motion.div
           className="glass-tagline"
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +50,6 @@ const HeroSection = () => {
             <span className="highlight"> emergency access</span>.
           </p>
         </motion.div>
-
       </div>
     </section>
   );
